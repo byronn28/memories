@@ -1,0 +1,125 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:url("assets/fondo.jpg") center center/cover no-repeat fixed;
+
+    min-height:100vh;
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    position:relative;
+
+}
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(3px);
+
+}
+
+header{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    margin-top:60px;
+
+    padding:20px;
+
+}
+
+header h1{
+
+    font-size:2.2rem;
+
+    margin-bottom:10px;
+
+}
+
+header p{
+
+    opacity:.9;
+
+}
+
+main{
+
+    position:relative;
+
+    z-index:2;
+
+    width:min(92%,420px);
+
+    margin:auto;
+
+}
+
+.card{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:18px;
+
+    margin:15px 0;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(12px);
+
+    transition:.3s;
+
+    font-size:1.1rem;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    background:rgba(255,255,255,.25);
+
+}
+
+footer{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    padding:25px;
+
+    opacity:.85;
+
+}
