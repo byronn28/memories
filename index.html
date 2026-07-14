@@ -1,253 +1,466 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Nuestros Recuerdos ❤️</title>
+<title>Nuestros Recuerdos ❤️</title>
 
-    <!-- Hoja de estilos -->
-    <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Iconos -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:url("fondo.jpg") center center/cover no-repeat;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+/* Oscurece la imagen */
+
+body::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(3px);
+
+}
+
+/* Contenedor */
+
+.container{
+
+    position:relative;
+
+    z-index:2;
+
+    width:90%;
+
+    max-width:420px;
+
+}
+
+/* Tarjetas */
+
+.card{
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+}
+
+/* Pantalla bienvenida */
+
+#welcome{
+
+    transition:.7s;
+
+}
+
+/* Logo */
+
+.logo{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.15);
+
+    font-size:38px;
+
+    color:#ff4d6d;
+
+    animation:heartbeat 1.8s infinite;
+
+}
+
+h1{
+
+    margin-top:20px;
+
+    text-align:center;
+
+    font-size:30px;
+
+}
+
+.subtitle{
+
+    margin-top:15px;
+
+    text-align:center;
+
+    line-height:1.7;
+
+    opacity:.9;
+
+}
+
+button{
+
+    margin-top:35px;
+
+    width:100%;
+
+    border:none;
+
+    padding:16px;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    color:white;
+
+    background:linear-gradient(135deg,#ff4d6d,#ff758f);
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* Contenido principal */
+
+#content{
+
+    display:none;
+
+    animation:fadeUp .8s;
+
+}
+
+.menu{
+
+    margin-top:25px;
+
+}
+
+.item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:rgba(255,255,255,.10);
+
+    padding:18px;
+
+    border-radius:18px;
+
+    margin-bottom:15px;
+
+    transition:.3s;
+
+}
+
+.item:hover{
+
+    transform:translateX(5px);
+
+    background:rgba(255,255,255,.18);
+
+}
+
+.left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.left i{
+
+    color:#ff758f;
+
+    font-size:20px;
+
+    width:20px;
+
+}
+
+footer{
+
+    text-align:center;
+
+    margin-top:25px;
+
+    opacity:.7;
+
+    font-size:14px;
+
+}
+
+@keyframes heartbeat{
+
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-    <!-- Fondo oscuro -->
-    <div class="overlay"></div>
+<div class="container">
 
-    <!-- ========================= -->
-    <!-- Pantalla de bienvenida -->
-    <!-- ========================= -->
+    <!-- BIENVENIDA -->
 
-    <section id="welcome-screen">
+    <div id="welcome" class="card">
 
-        <div class="welcome-card">
+        <div class="logo">
 
-            <div class="heart">
-
-                <i class="fa-solid fa-heart"></i>
-
-            </div>
-
-            <h1>Bienvenido ❤️</h1>
-
-            <p>
-
-                He preparado un pequeño lugar donde podrás encontrar
-                algunos de nuestros recuerdos favoritos.
-
-            </p>
-
-            <button id="enterButton">
-
-    <i class="fa-solid fa-lock-open"></i>
-
-    <span>Desbloquear recuerdos</span>
-
-</button>
-
-<div id="loading">
-
-    <div class="loading-text">
-
-        Desbloqueando recuerdos...
-
-    </div>
-
-    <div class="progress">
-
-        <div class="progress-bar"></div>
-
-    </div>
-
-</div>
+            <i class="fa-solid fa-heart"></i>
 
         </div>
 
-    </section>
+        <h1>Bienvenido</h1>
 
-    <!-- ========================= -->
-    <!-- Contenido principal -->
-    <!-- ========================= -->
+        <p class="subtitle">
 
-    <div id="app">
+            He preparado un pequeño lugar donde podrás encontrar algunos de nuestros recuerdos favoritos.
 
-        <!-- HEADER -->
+        </p>
 
-        <header>
+        <button id="btnEntrar">
 
-            <h1>
+            <i class="fa-solid fa-lock-open"></i>
 
-                Nuestros Recuerdos
+            Desbloquear recuerdos
 
-            </h1>
+        </button>
 
-            <p>
+    </div>
+
+    <!-- CONTENIDO -->
+
+    <div id="content">
+
+        <div class="card">
+
+            <h1>❤️ Nuestros Recuerdos</h1>
+
+            <p class="subtitle">
 
                 Cada momento contigo merece un lugar especial.
 
             </p>
 
-        </header>
+            <div class="menu">
 
-        <!-- MENÚ -->
+                <a href="https://spotify.com" target="_blank" class="item">
 
-        <main>
+                    <div class="left">
 
-            <!-- Canción -->
+                        <i class="fa-solid fa-music"></i>
 
-            <a href="https://spotify.com"
-                target="_blank"
-                class="card">
+                        <span>Nuestra canción</span>
 
-                <div class="card-left">
+                    </div>
 
-                    <i class="fa-solid fa-music"></i>
+                    <i class="fa-solid fa-chevron-right"></i>
 
-                    <span>
+                </a>
 
-                        Nuestra canción
+                <a href="#" class="item">
 
-                    </span>
+                    <div class="left">
 
-                </div>
+                        <i class="fa-solid fa-images"></i>
 
-                <i class="fa-solid fa-chevron-right"></i>
+                        <span>Nuestras fotos</span>
 
-            </a>
+                    </div>
 
-            <!-- Fotos -->
+                    <i class="fa-solid fa-chevron-right"></i>
 
-            <a href="#"
-                class="card">
+                </a>
 
-                <div class="card-left">
+                <a href="#" class="item">
 
-                    <i class="fa-solid fa-images"></i>
+                    <div class="left">
 
-                    <span>
+                        <i class="fa-solid fa-envelope"></i>
 
-                        Nuestras fotos
+                        <span>Una carta</span>
 
-                    </span>
+                    </div>
 
-                </div>
+                    <i class="fa-solid fa-chevron-right"></i>
 
-                <i class="fa-solid fa-chevron-right"></i>
+                </a>
 
-            </a>
+                <a href="#" class="item">
 
-            <!-- Carta -->
+                    <div class="left">
 
-            <a href="#"
-                class="card">
+                        <i class="fa-solid fa-film"></i>
 
-                <div class="card-left">
+                        <span>Nuestro video</span>
 
-                    <i class="fa-solid fa-envelope-open-text"></i>
+                    </div>
 
-                    <span>
+                    <i class="fa-solid fa-chevron-right"></i>
 
-                        Una carta
+                </a>
 
-                    </span>
+                <a href="#" class="item">
 
-                </div>
+                    <div class="left">
 
-                <i class="fa-solid fa-chevron-right"></i>
+                        <i class="fa-solid fa-location-dot"></i>
 
-            </a>
+                        <span>Nuestro lugar</span>
 
-            <!-- Video -->
+                    </div>
 
-            <a href="#"
-                class="card">
+                    <i class="fa-solid fa-chevron-right"></i>
 
-                <div class="card-left">
+                </a>
 
-                    <i class="fa-solid fa-film"></i>
+                <a href="#" class="item">
 
-                    <span>
+                    <div class="left">
 
-                        Nuestro video
+                        <i class="fa-solid fa-gift"></i>
 
-                    </span>
+                        <span>Sorpresa</span>
 
-                </div>
+                    </div>
 
-                <i class="fa-solid fa-chevron-right"></i>
+                    <i class="fa-solid fa-chevron-right"></i>
 
-            </a>
+                </a>
 
-            <!-- Lugar -->
+            </div>
 
-            <a href="#"
-                class="card">
-
-                <div class="card-left">
-
-                    <i class="fa-solid fa-location-dot"></i>
-
-                    <span>
-
-                        Nuestro lugar especial
-
-                    </span>
-
-                </div>
-
-                <i class="fa-solid fa-chevron-right"></i>
-
-            </a>
-
-            <!-- Sorpresa -->
-
-            <a href="#"
-                class="card">
-
-                <div class="card-left">
-
-                    <i class="fa-solid fa-gift"></i>
-
-                    <span>
-
-                        Una sorpresa
-
-                    </span>
-
-                </div>
-
-                <i class="fa-solid fa-chevron-right"></i>
-
-            </a>
-
-        </main>
-
-        <!-- FOOTER -->
-
-        <footer>
-
-            <p>
+            <footer>
 
                 Hecho con ❤️ especialmente para ti
 
-            </p>
+            </footer>
 
-        </footer>
+        </div>
 
     </div>
 
-    <!-- Javascript -->
+</div>
 
-    <script src="script.js"></script>
+<script>
+
+const btn = document.getElementById("btnEntrar");
+
+const welcome = document.getElementById("welcome");
+
+const content = document.getElementById("content");
+
+btn.onclick = () =>{
+
+    welcome.style.display="none";
+
+    content.style.display="block";
+
+}
+
+</script>
 
 </body>
 
 </html>
+```
