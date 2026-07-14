@@ -1,108 +1,73 @@
-/* ==========================================
-   NUESTROS RECUERDOS
-   Script principal
-========================================== */
-
 document.addEventListener("DOMContentLoaded", () => {
 
-    // ===============================
-    // ELEMENTOS
-    // ===============================
-
-    const welcomeScreen = document.getElementById("welcome-screen");
-    const enterButton = document.getElementById("enterButton");
     const app = document.getElementById("app");
-    const cards = document.querySelectorAll(".card");
 
-    // ===============================
-    // ESTADO INICIAL
-    // ===============================
+    const welcome = document.getElementById("welcome-screen");
+
+    const enterButton = document.getElementById("enterButton");
+
+    const loading = document.getElementById("loading");
+
+    const progress = document.querySelector(".progress-bar");
+
+    const cards = document.querySelectorAll(".card");
 
     app.style.display = "none";
 
-    // ===============================
-    // BOTÓN ENTRAR
-    // ===============================
-
     enterButton.addEventListener("click", () => {
 
-        // Desvanecer pantalla de bienvenida
+        enterButton.style.display = "none";
 
-        welcomeScreen.style.opacity = "0";
-
-        welcomeScreen.style.pointerEvents = "none";
+        loading.style.display = "block";
 
         setTimeout(() => {
 
-            welcomeScreen.style.display = "none";
+            progress.style.width = "100%";
 
-            app.style.display = "block";
+        },100);
 
-            // Esperar un instante para iniciar transición
+        setTimeout(()=>{
 
-            setTimeout(() => {
+            welcome.style.opacity="0";
 
-                app.style.opacity = "1";
-                app.style.transform = "translateY(0px)";
+        },2200);
 
-            }, 100);
+        setTimeout(()=>{
+
+            welcome.style.display="none";
+
+            app.style.display="block";
+
+            app.style.opacity="1";
+
+            app.style.transform="translateY(0px)";
 
             mostrarTarjetas();
 
-        }, 900);
+        },3000);
 
     });
 
-    // ===============================
-    // ANIMACIÓN TARJETAS
-    // ===============================
+    function mostrarTarjetas(){
 
-    function mostrarTarjetas() {
+        cards.forEach((card,index)=>{
 
-        cards.forEach((card, index) => {
+            card.style.opacity="0";
 
-            card.style.opacity = "0";
+            card.style.transform="translateY(50px)";
 
-            card.style.transform = "translateY(25px)";
+            setTimeout(()=>{
 
-            setTimeout(() => {
+                card.style.transition=".6s";
 
-                card.style.transition = "0.6s";
+                card.style.opacity="1";
 
-                card.style.opacity = "1";
+                card.style.transform="translateY(0px)";
 
-                card.style.transform = "translateY(0px)";
-
-            }, index * 120);
+            },index*140);
 
         });
 
     }
-
-    // ===============================
-    // EFECTO CLICK
-    // ===============================
-
-    cards.forEach(card => {
-
-        card.addEventListener("click", () => {
-
-            card.style.transform = "scale(.97)";
-
-            setTimeout(() => {
-
-                card.style.transform = "";
-
-            }, 120);
-
-        });
-
-    });
-
-    // ===============================
-    // MENSAJE DE CONSOLA
-    // ===============================
-
-    console.log("❤️ Proyecto Nuestros Recuerdos cargado correctamente.");
 
 });
