@@ -334,44 +334,60 @@ transform:scale(1);
 
 <div class="container">
 
-<div class="album">
+    <div class="album">
 
-<h1>
+        <h1>📸 Nuestro Álbum</h1>
 
-📸 Nuestro Álbum
+        <p class="subtitle">
+            Cada fotografía guarda un momento especial que quiero conservar para siempre contigo.
+        </p>
 
-</h1>
+        <!-- FOTO -->
+        <div class="image">
 
-<p class="subtitle">
+            <img id="photo" src="" alt="Nuestro recuerdo">
 
-Cada fotografía guarda un momento especial que quiero conservar para siempre contigo.
+        </div>
 
-</p>
+        <!-- INFORMACIÓN -->
+        <div class="info">
 
+            <h2 id="title"></h2>
 
-<div class="navigation">
+            <p id="description"></p>
 
-    <button type="button" id="prevBtn" class="btn">
+            <div class="date" id="date"></div>
 
-        ← Anterior
+        </div>
 
-    </button>
+        <!-- BOTONES -->
+        <div class="navigation">
 
-    <span id="counter">
+            <button type="button" class="btn" id="prevBtn">
 
-        1 / 2
+                <i class="fa-solid fa-chevron-left"></i>
 
-    </span>
+                Anterior
 
-    <button type="button" id="nextBtn" class="btn">
+            </button>
 
-        Siguiente →
+            <span class="counter" id="counter">
 
-    </button>
+                1 / 1
 
-</div>
+            </span>
 
-</div>
+            <button type="button" class="btn" id="nextBtn">
+
+                Siguiente
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
+        </div>
+
+    </div>
 
 </div>
 
@@ -380,17 +396,17 @@ Cada fotografía guarda un momento especial que quiero conservar para siempre co
 const recuerdos = [
 
 {
-imagen:"assets/flyer expotuning cuenca 2026.jpg",
-titulo:"Nuestra primera foto ❤️",
-descripcion:"Aquí comenzó una historia llena de momentos inolvidables.",
-fecha:"📅 15 Enero 2026"
+    imagen:"assets/JORGITOBOTELLA.jpg",
+    titulo:"Nuestra primera foto ❤️",
+    descripcion:"Aquí comenzó una historia llena de momentos inolvidables.",
+    fecha:"📅 15 Enero 2026"
 },
 
 {
-imagen:"assets/JORGITOBOTELLA.jpg",
-titulo:"Nuestro primer viaje ✈️",
-descripcion:"Un viaje que siempre recordaré.",
-fecha:"📅 28 Febrero 2026"
+    imagen:"assets/foto2.jpg",
+    titulo:"Nuestro primer viaje ✈️",
+    descripcion:"Un viaje que siempre recordaré.",
+    fecha:"📅 28 Febrero 2026"
 }
 
 ];
@@ -398,26 +414,15 @@ fecha:"📅 28 Febrero 2026"
 let actual = 0;
 
 const photo = document.getElementById("photo");
-
 const title = document.getElementById("title");
-
 const description = document.getElementById("description");
-
 const date = document.getElementById("date");
-
 const counter = document.getElementById("counter");
 
 const prev = document.getElementById("prevBtn");
-
 const next = document.getElementById("nextBtn");
 
 function cargarFoto(){
-
-    photo.classList.remove("fade");
-
-    void photo.offsetWidth;
-
-    photo.classList.add("fade");
 
     photo.src = recuerdos[actual].imagen;
 
@@ -427,25 +432,11 @@ function cargarFoto(){
 
     date.textContent = recuerdos[actual].fecha;
 
-    counter.textContent = (actual+1)+" / "+recuerdos.length;
+    counter.textContent = `${actual + 1} / ${recuerdos.length}`;
 
 }
 
-next.onclick=()=>{
-
-    actual++;
-
-    if(actual>=recuerdos.length){
-
-        actual=0;
-
-    }
-
-    cargarFoto();
-
-}
-
-prev.onclick=()=>{
+prev.addEventListener("click",()=>{
 
     actual--;
 
@@ -457,7 +448,21 @@ prev.onclick=()=>{
 
     cargarFoto();
 
-}
+});
+
+next.addEventListener("click",()=>{
+
+    actual++;
+
+    if(actual>=recuerdos.length){
+
+        actual=0;
+
+    }
+
+    cargarFoto();
+
+});
 
 cargarFoto();
 
