@@ -1,0 +1,550 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nuestro Álbum ❤️</title>
+
+<link rel="icon" href="assets/icono.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#111;
+
+    color:white;
+
+}
+
+/* ===========================
+FONDO
+=========================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:url("assets/JORGITOBOTELLA.jpg") center center/cover no-repeat;
+
+    filter:blur(8px) brightness(.35);
+
+    transform:scale(1.08);
+
+    z-index:-2;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:linear-gradient(to bottom,
+    rgba(0,0,0,.35),
+    rgba(0,0,0,.70));
+
+    z-index:-1;
+
+}
+
+/* ===========================
+HEADER
+=========================== */
+
+header{
+
+    padding:70px 25px 50px;
+
+    text-align:center;
+
+}
+
+header h1{
+
+    font-size:clamp(32px,6vw,50px);
+
+    margin-bottom:15px;
+
+}
+
+header p{
+
+    opacity:.85;
+
+    max-width:650px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+}
+
+/* ===========================
+BOTÓN VOLVER
+=========================== */
+
+.back{
+
+    position:fixed;
+
+    top:25px;
+
+    left:25px;
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+    transition:.3s;
+
+    z-index:999;
+
+}
+
+.back:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* ===========================
+ÁLBUM
+=========================== */
+
+.album{
+
+    width:min(92%,900px);
+
+    margin:auto;
+
+    padding-bottom:80px;
+
+}
+
+/* ===========================
+TARJETA
+=========================== */
+
+.photo-card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    margin-bottom:50px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+
+    transition:.35s;
+
+}
+
+.photo-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/* ===========================
+IMAGEN
+=========================== */
+
+.photo-card img{
+
+    width:100%;
+
+    display:block;
+
+    aspect-ratio:4/5;
+
+    object-fit:cover;
+
+    cursor:pointer;
+
+}
+
+/* ===========================
+CONTENIDO
+=========================== */
+
+.info{
+
+    padding:25px;
+
+}
+
+.info h2{
+
+    font-size:24px;
+
+    margin-bottom:12px;
+
+}
+
+.info p{
+
+    line-height:1.8;
+
+    opacity:.9;
+
+}
+
+.date{
+
+    margin-top:18px;
+
+    color:#ff9fb5;
+
+    font-size:14px;
+
+}
+
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media(max-width:700px){
+
+header{
+
+padding-top:100px;
+
+}
+
+.photo-card{
+
+margin-bottom:35px;
+
+}
+
+.info{
+
+padding:20px;
+
+}
+
+.info h2{
+
+font-size:22px;
+
+}
+
+}
+/* ===========================
+VISOR
+=========================== */
+
+#viewer{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.95);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:9999;
+
+}
+
+#viewer.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+#viewer img{
+
+    max-width:92%;
+
+    max-height:88%;
+
+    border-radius:18px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.6);
+
+    transform:scale(.8);
+
+    transition:.35s;
+
+}
+
+#viewer.active img{
+
+    transform:scale(1);
+
+}
+
+#closeViewer{
+
+    position:absolute;
+
+    top:25px;
+
+    right:25px;
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#closeViewer:hover{
+
+    background:rgba(255,255,255,.25);
+
+    transform:rotate(90deg);
+
+}
+</style>
+
+</head>
+
+<body>
+
+<a href="index.html" class="back">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+</a>
+
+<header>
+
+<h1>📸 Nuestro Álbum</h1>
+
+<p>
+
+Cada fotografía guarda un momento,
+una sonrisa y un recuerdo que siempre
+quiero conservar contigo.
+
+</p>
+
+</header>
+
+<section class="album">
+
+<div class="photo-card">
+
+<img src="assets/foto1.jpg" alt="Foto 1">
+
+<div class="info">
+
+<h2>Nuestra primera foto ❤️</h2>
+
+<p>
+
+Aquí puedes escribir una pequeña historia
+sobre este momento.
+
+</p>
+
+<div class="date">
+
+📅 14 Febrero 2026
+
+</div>
+
+</div>
+
+</div>
+
+<div class="photo-card">
+
+<img src="assets/foto2.jpg" alt="Foto 2">
+
+<div class="info">
+
+<h2>Un día inolvidable 🌅</h2>
+
+<p>
+
+Cada vez que veo esta fotografía
+recuerdo lo feliz que fuimos.
+
+</p>
+
+<div class="date">
+
+📅 20 Marzo 2026
+
+</div>
+
+</div>
+
+</div>
+
+<div class="photo-card">
+
+<img src="assets/foto3.jpg" alt="Foto 3">
+
+<div class="info">
+
+<h2>Siempre juntos ✨</h2>
+
+<p>
+
+Otro pequeño recuerdo que nunca
+quiero olvidar.
+
+</p>
+
+<div class="date">
+
+📅 5 Abril 2026
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ==========================
+     VISOR DE FOTOS
+========================== -->
+
+<div id="viewer">
+
+    <span id="closeViewer">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </span>
+
+    <img id="viewerImage" src="" alt="">
+
+</div>
+  <script>
+
+const photos = document.querySelectorAll(".photo-card img");
+
+const viewer = document.getElementById("viewer");
+
+const viewerImage = document.getElementById("viewerImage");
+
+const closeViewer = document.getElementById("closeViewer");
+
+photos.forEach(photo=>{
+
+    photo.addEventListener("click",()=>{
+
+        viewerImage.src = photo.src;
+
+        viewer.classList.add("active");
+
+        document.body.style.overflow="hidden";
+
+    });
+
+});
+
+closeViewer.addEventListener("click",()=>{
+
+    viewer.classList.remove("active");
+
+    document.body.style.overflow="auto";
+
+});
+
+viewer.addEventListener("click",(e)=>{
+
+    if(e.target===viewer){
+
+        viewer.classList.remove("active");
+
+        document.body.style.overflow="auto";
+
+    }
+
+});
+
+</script>
+</body>
+
+</html>
+```
