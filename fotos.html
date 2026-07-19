@@ -1,280 +1,283 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Nuestro Álbum ❤️</title>
 
 <link rel="icon" href="assets/icono.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
 
-html{
-    scroll-behavior:smooth;
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
 }
 
 body{
 
-    font-family:'Poppins',sans-serif;
+font-family:Poppins,sans-serif;
 
-    background:#111;
+background:#111;
 
-    color:white;
+overflow:hidden;
+
+color:white;
 
 }
 
-/* ===========================
-FONDO
-=========================== */
+/* Fondo */
 
 body::before{
 
-    content:"";
+content:"";
 
-    position:fixed;
+position:fixed;
 
-    inset:0;
+inset:0;
 
-    background:url("assets/JORGITOBOTELLA.jpg") center center/cover no-repeat;
+background:url("assets/JORGITOBOTELLA.jpg")
+center center/cover;
 
-    filter:blur(8px) brightness(.35);
+filter:blur(10px)
+brightness(.35);
 
-    transform:scale(1.08);
+transform:scale(1.1);
 
-    z-index:-2;
+z-index:-2;
 
 }
 
 body::after{
 
-    content:"";
+content:"";
 
-    position:fixed;
+position:fixed;
 
-    inset:0;
+inset:0;
 
-    background:linear-gradient(to bottom,
-    rgba(0,0,0,.35),
-    rgba(0,0,0,.70));
+background:rgba(0,0,0,.30);
 
-    z-index:-1;
+z-index:-1;
 
 }
 
-/* ===========================
-HEADER
-=========================== */
+/* Contenedor */
 
-header{
+.container{
 
-    padding:70px 25px 50px;
+width:min(95%,550px);
 
-    text-align:center;
+margin:auto;
 
-}
+height:100dvh;
 
-header h1{
+display:flex;
 
-    font-size:clamp(32px,6vw,50px);
+justify-content:center;
 
-    margin-bottom:15px;
+align-items:center;
 
 }
 
-header p{
-
-    opacity:.85;
-
-    max-width:650px;
-
-    margin:auto;
-
-    line-height:1.8;
-
-}
-
-/* ===========================
-BOTÓN VOLVER
-=========================== */
-
-.back{
-
-    position:fixed;
-
-    top:25px;
-
-    left:25px;
-
-    width:50px;
-
-    height:50px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.12);
-
-    backdrop-filter:blur(15px);
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    color:white;
-
-    text-decoration:none;
-
-    font-size:20px;
-
-    transition:.3s;
-
-    z-index:999;
-
-}
-
-.back:hover{
-
-    transform:scale(1.08);
-
-}
-
-/* ===========================
-ÁLBUM
-=========================== */
+/* Tarjeta */
 
 .album{
 
-    width:min(92%,900px);
+width:100%;
 
-    margin:auto;
+background:rgba(255,255,255,.08);
 
-    padding-bottom:80px;
+backdrop-filter:blur(18px);
 
-}
+border-radius:30px;
 
-/* ===========================
-TARJETA
-=========================== */
+padding:30px;
 
-.photo-card{
+box-shadow:0 20px 50px rgba(0,0,0,.4);
 
-    background:rgba(255,255,255,.08);
-
-    backdrop-filter:blur(18px);
-
-    border-radius:28px;
-
-    overflow:hidden;
-
-    margin-bottom:50px;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    box-shadow:0 20px 45px rgba(0,0,0,.35);
-
-    transition:.35s;
+border:1px solid rgba(255,255,255,.08);
 
 }
 
-.photo-card:hover{
+/* Título */
 
-    transform:translateY(-6px);
+h1{
 
-}
+text-align:center;
 
-/* ===========================
-IMAGEN
-=========================== */
+font-size:34px;
 
-.photo-card img{
-
-    width:100%;
-
-    display:block;
-
-    aspect-ratio:4/5;
-
-    object-fit:cover;
-
-    cursor:pointer;
+margin-bottom:10px;
 
 }
 
-/* ===========================
-CONTENIDO
-=========================== */
+.subtitle{
+
+text-align:center;
+
+opacity:.8;
+
+line-height:1.8;
+
+margin-bottom:30px;
+
+}
+
+/* Imagen */
+
+.image{
+
+width:100%;
+
+height:420px;
+
+border-radius:22px;
+
+overflow:hidden;
+
+box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+}
+
+.image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+display:block;
+
+}
+
+/* Información */
 
 .info{
 
-    padding:25px;
+margin-top:25px;
 
 }
 
 .info h2{
 
-    font-size:24px;
+font-size:28px;
 
-    margin-bottom:12px;
+margin-bottom:10px;
 
 }
 
 .info p{
 
-    line-height:1.8;
+opacity:.9;
 
-    opacity:.9;
+line-height:1.8;
 
 }
 
 .date{
 
-    margin-top:18px;
+margin-top:20px;
 
-    color:#ff9fb5;
-
-    font-size:14px;
+color:#ff9fb5;
 
 }
 
-/* ===========================
-RESPONSIVE
-=========================== */
+/* Navegación */
 
-@media(max-width:700px){
+.navigation{
 
-header{
+display:flex;
 
-padding-top:100px;
+justify-content:space-between;
 
-}
+align-items:center;
 
-.photo-card{
-
-margin-bottom:35px;
+margin-top:35px;
 
 }
 
-.info{
+.btn{
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.12);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:22px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+background:#ff4d6d;
+
+}
+
+.counter{
+
+font-size:18px;
+
+font-weight:600;
+
+}
+
+/* Responsive */
+
+@media(max-width:600px){
+
+.album{
 
 padding:20px;
+
+}
+
+.image{
+
+height:330px;
+
+}
+
+h1{
+
+font-size:28px;
 
 }
 
@@ -285,172 +288,112 @@ font-size:22px;
 }
 
 }
-/* ===========================
-VISOR
-=========================== */
 
-#viewer{
+.fade{
 
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.95);
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transition:.35s;
-
-    z-index:9999;
+    animation:fade .45s;
 
 }
 
-#viewer.active{
+@keyframes fade{
 
-    opacity:1;
+0%{
 
-    visibility:visible;
+opacity:0;
 
-}
-
-#viewer img{
-
-    max-width:92%;
-
-    max-height:88%;
-
-    border-radius:18px;
-
-    box-shadow:0 20px 60px rgba(0,0,0,.6);
-
-    transform:scale(.8);
-
-    transition:.35s;
+transform:scale(.96);
 
 }
 
-#viewer.active img{
+100%{
 
-    transform:scale(1);
+opacity:1;
 
-}
-
-#closeViewer{
-
-    position:absolute;
-
-    top:25px;
-
-    right:25px;
-
-    width:50px;
-
-    height:50px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.15);
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:22px;
-
-    cursor:pointer;
-
-    transition:.3s;
+transform:scale(1);
 
 }
 
-#closeViewer:hover{
-
-    background:rgba(255,255,255,.25);
-
-    transform:rotate(90deg);
-
 }
+
 </style>
 
 </head>
 
 <body>
 
-<a href="index.html" class="back">
+<div class="container">
 
-<i class="fa-solid fa-arrow-left"></i>
+<div class="album">
 
-</a>
+<h1>
 
-<header>
+📸 Nuestro Álbum
 
-<h1>📸 Nuestro Álbum</h1>
+</h1>
 
-<p>
+<p class="subtitle">
 
-Cada fotografía guarda un momento,
-una sonrisa y un recuerdo que siempre
-quiero conservar contigo.
+Cada fotografía guarda un momento especial que quiero conservar para siempre contigo.
 
 </p>
 
-</header>
+<div class="image">
 
-<section class="album">
+<img
+id="photo"
+src="assets/foto1.jpg">
 
-<div class="photo-card">
-
-<img src="assets/flyer expotuning cuenca 2026.jpg" alt="Foto 1">
+</div>
 
 <div class="info">
 
-<h2>Nuestra primera foto ❤️</h2>
+<h2 id="title">
 
-<p>
+Nuestra primera foto ❤️
 
-Aquí puedes escribir una pequeña historia
-sobre este momento.
+</h2>
 
-</p>
+<p id="description">
 
-<div class="date">
-
-📅 14 Febrero 2026
-
-</div>
-
-</div>
-
-</div>
-
-<div class="photo-card">
-
-<img src="assets/foto2.jpg" alt="Foto 2">
-
-<div class="info">
-
-<h2>Un día inolvidable 🌅</h2>
-
-<p>
-
-Cada vez que veo esta fotografía
-recuerdo lo feliz que fuimos.
+Aquí aparecerá una pequeña historia sobre este momento tan especial.
 
 </p>
 
-<div class="date">
+<div
+class="date"
+id="date">
 
-📅 20 Marzo 2026
+📅 15 Enero 2026
+
+</div>
+
+</div>
+
+<div class="navigation">
+
+<div class="navigation">
+
+    <div class="btn" id="prevBtn">
+
+        <i class="fa-solid fa-chevron-left"></i>
+
+    </div>
+
+    <div class="counter" id="counter">
+
+        1 / 3
+
+    </div>
+
+    <div class="btn" id="nextBtn">
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+    </div>
+
+</div>
+
+<i class="fa-solid fa-chevron-right"></i>
 
 </div>
 
@@ -458,92 +401,118 @@ recuerdo lo feliz que fuimos.
 
 </div>
 
-<div class="photo-card">
-
-<img src="assets/foto3.jpg" alt="Foto 3">
-
-<div class="info">
-
-<h2>Siempre juntos ✨</h2>
-
-<p>
-
-Otro pequeño recuerdo que nunca
-quiero olvidar.
-
-</p>
-
-<div class="date">
-
-📅 5 Abril 2026
-
 </div>
 
-</div>
+<script>
 
-</div>
+const recuerdos = [
 
-</section>
-<!-- ==========================
-     VISOR DE FOTOS
-========================== -->
+{
 
-<div id="viewer">
+imagen:"assets/foto1.jpg",
 
-    <span id="closeViewer">
+titulo:"Nuestra primera foto ❤️",
 
-        <i class="fa-solid fa-xmark"></i>
+descripcion:"Aquí comenzó una historia llena de momentos inolvidables.",
 
-    </span>
+fecha:"📅 15 Enero 2026"
 
-    <img id="viewerImage" src="" alt="">
+},
 
-</div>
-  <script>
+{
 
-const photos = document.querySelectorAll(".photo-card img");
+imagen:"assets/foto2.jpg",
 
-const viewer = document.getElementById("viewer");
+titulo:"Nuestro primer viaje ✈️",
 
-const viewerImage = document.getElementById("viewerImage");
+descripcion:"Un viaje que siempre recordaré por todas las aventuras que vivimos.",
 
-const closeViewer = document.getElementById("closeViewer");
+fecha:"📅 28 Febrero 2026"
 
-photos.forEach(photo=>{
+},
 
-    photo.addEventListener("click",()=>{
+{
 
-        viewerImage.src = photo.src;
+imagen:"assets/foto3.jpg",
 
-        viewer.classList.add("active");
+titulo:"Un día perfecto 🌅",
 
-        document.body.style.overflow="hidden";
+descripcion:"No hacía falta nada más, solo estar contigo.",
 
-    });
+fecha:"📅 12 Abril 2026"
 
-});
+}
 
-closeViewer.addEventListener("click",()=>{
+];
 
-    viewer.classList.remove("active");
+let actual = 0;
 
-    document.body.style.overflow="auto";
+const photo = document.getElementById("photo");
 
-});
+const title = document.getElementById("title");
 
-viewer.addEventListener("click",(e)=>{
+const description = document.getElementById("description");
 
-    if(e.target===viewer){
+const date = document.getElementById("date");
 
-        viewer.classList.remove("active");
+const counter = document.getElementById("counter");
 
-        document.body.style.overflow="auto";
+const prev = document.getElementById("prevBtn");
+
+const next = document.getElementById("nextBtn");
+
+function cargarFoto(){
+
+    photo.classList.remove("fade");
+
+    void photo.offsetWidth;
+
+    photo.classList.add("fade");
+
+    photo.src = recuerdos[actual].imagen;
+
+    title.textContent = recuerdos[actual].titulo;
+
+    description.textContent = recuerdos[actual].descripcion;
+
+    date.textContent = recuerdos[actual].fecha;
+
+    counter.textContent = (actual+1)+" / "+recuerdos.length;
+
+}
+
+next.onclick=()=>{
+
+    actual++;
+
+    if(actual>=recuerdos.length){
+
+        actual=0;
 
     }
 
-});
+    cargarFoto();
+
+}
+
+prev.onclick=()=>{
+
+    actual--;
+
+    if(actual<0){
+
+        actual=recuerdos.length-1;
+
+    }
+
+    cargarFoto();
+
+}
+
+cargarFoto();
 
 </script>
+
 </body>
 
 </html>
