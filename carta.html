@@ -5,19 +5,26 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Una Carta Para Ti ❤️</title>
 
-<link rel="icon" href="assets/icono.png">
+<link rel="icon"
+href="assets/icono.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Caveat:wght@400;500;600;700&display=swap"
+rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
 
@@ -37,7 +44,11 @@ font-family:'Poppins',sans-serif;
 
 background:#111;
 
+color:white;
+
 min-height:100vh;
+
+padding:40px 20px;
 
 display:flex;
 
@@ -45,15 +56,15 @@ justify-content:center;
 
 align-items:center;
 
-padding:40px 20px;
+position:relative;
 
 overflow-y:auto;
 
-position:relative;
-
 }
 
-/* Fondo */
+/*==============================
+FONDO
+==============================*/
 
 body::before{
 
@@ -63,9 +74,11 @@ position:fixed;
 
 inset:0;
 
-background:url("assets/JORGITOBOTELLA.jpg") center center/cover no-repeat;
+background:url("assets/JORGITOBOTELLA.jpg")
+center center/cover no-repeat;
 
-filter:blur(12px) brightness(.28);
+filter:blur(12px)
+brightness(.28);
 
 transform:scale(1.08);
 
@@ -81,13 +94,15 @@ position:fixed;
 
 inset:0;
 
-background:rgba(0,0,0,.25);
+background:rgba(0,0,0,.20);
 
 z-index:-1;
 
 }
 
-/* Contenedor */
+/*==============================
+CONTENEDOR
+==============================*/
 
 .container{
 
@@ -99,13 +114,15 @@ justify-content:center;
 
 }
 
-/* Sobre */
+/*==============================
+CARD
+==============================*/
 
-.envelope{
+.card{
 
 width:100%;
 
-max-width:520px;
+max-width:650px;
 
 background:rgba(255,255,255,.10);
 
@@ -113,129 +130,117 @@ backdrop-filter:blur(18px);
 
 border:1px solid rgba(255,255,255,.18);
 
-border-radius:30px;
+border-radius:28px;
 
-padding:40px 30px;
+padding:30px;
 
-box-shadow:0 20px 50px rgba(0,0,0,.45);
+box-shadow:0 20px 45px rgba(0,0,0,.45);
+
+}
+
+/*==============================
+TÍTULO
+==============================*/
+
+h1{
 
 text-align:center;
 
-}
+font-size:32px;
 
-/* Icono */
-
-.icon{
-
-width:100px;
-
-height:100px;
-
-margin:auto;
-
-border-radius:50%;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-background:rgba(255,255,255,.12);
-
-font-size:42px;
-
-color:#ff5d7d;
-
-animation:float 3s ease-in-out infinite;
+margin-bottom:12px;
 
 }
-
-/* Título */
-
-h1{
-
-margin-top:25px;
-
-font-size:34px;
-
-color:white;
-
-}
-
-/* Texto */
 
 .subtitle{
 
-margin-top:18px;
+text-align:center;
 
-line-height:1.9;
+line-height:1.8;
 
-color:rgba(255,255,255,.88);
+opacity:.85;
+
+margin-bottom:30px;
 
 }
 
-/* Botón */
+/*==============================
+PAPEL
+==============================*/
 
-button{
+.paper{
 
-margin-top:35px;
+background:#fffaf3;
 
-border:none;
+color:#444;
 
-padding:16px 34px;
+border-radius:18px;
 
-border-radius:40px;
+padding:35px;
 
-background:linear-gradient(135deg,#ff5d7d,#ff8da1);
-
-color:white;
-
-font-size:16px;
-
-font-weight:600;
+box-shadow:0 10px 25px rgba(0,0,0,.18);
 
 cursor:pointer;
 
-transition:.3s;
+transition:.35s;
 
 }
 
-button:hover{
+.paper:hover{
 
-transform:translateY(-4px);
-
-box-shadow:0 10px 25px rgba(255,93,125,.35);
+transform:translateY(-3px);
 
 }
 
-/* Pie */
+/* Encabezado del papel */
 
-.footer{
+.paper-title{
 
-margin-top:30px;
+font-family:'Caveat',cursive;
 
-font-size:14px;
+font-size:42px;
 
-opacity:.7;
+text-align:center;
 
-color:white;
+color:#d14f73;
+
+margin-bottom:18px;
 
 }
 
-/* Responsive */
+/* Texto inicial */
+
+.paper-start{
+
+font-family:'Caveat',cursive;
+
+font-size:30px;
+
+text-align:center;
+
+color:#666;
+
+line-height:1.8;
+
+padding:35px 0;
+
+}
+
+/*==============================
+RESPONSIVE
+==============================*/
 
 @media(max-width:600px){
 
-.envelope{
+.card{
 
-padding:30px 22px;
+padding:20px;
 
 }
 
 h1{
 
-font-size:28px;
+font-size:27px;
 
 }
 
@@ -243,113 +248,45 @@ font-size:28px;
 
 font-size:15px;
 
-line-height:1.8;
-
 }
-
-button{
-
-width:100%;
-
-}
-
-}
-
-/* Animación */
-
-@keyframes float{
-
-0%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-10px);
-
-}
-
-100%{
-
-transform:translateY(0);
-
-}
-
-}
-
-/*=========================
-        CARTA
-=========================*/
-
-.letter{
-
-    position:fixed;
-
-    inset:0;
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    padding:30px;
-
-    background:rgba(0,0,0,.45);
-
-    backdrop-filter:blur(8px);
-
-    z-index:100;
-
-}
-
-/* Papel */
 
 .paper{
 
-    width:min(800px,92%);
-
-    min-height:650px;
-
-    max-height:none;
-
-    overflow:visible;
-
-    padding:40px 45px;
+padding:25px;
 
 }
 
-/* Cabecera */
+.paper-title{
 
-.paper-header{
-
-    text-align:center;
-
-    font-family:'Caveat',cursive;
-
-    font-size:42px;
-
-    color:#d84c6f;
-
-    margin-bottom:15px;
+font-size:34px;
 
 }
 
-/* Texto */
+.paper-start{
 
-.paper-body{
+font-size:25px;
+
+}
+
+}
+
+/*==============================
+CARTA
+==============================*/
+
+.letter-text{
 
     font-family:'Caveat',cursive;
 
-    font-size:34px;
+    font-size:30px;
 
-    line-height:1.9;
+    line-height:1.8;
 
-    min-height:auto;
+    color:#444;
 
     white-space:pre-wrap;
+
+    margin-top:10px;
 
 }
 
@@ -357,7 +294,7 @@ transform:translateY(0);
 
 .signature{
 
-    margin-top:15px;
+    margin-top:25px;
 
     text-align:right;
 
@@ -365,106 +302,57 @@ transform:translateY(0);
 
 }
 
-.signature h3{
-
-    font-size:38px;
-
-    color:#c94b6a;
-
-}
-
-.signature span{
-
-    display:block;
-
-    margin-top:10px;
-
-    font-size:24px;
-
-    color:#777;
-
-}
-
-/* Scroll bonito */
-
-.paper::-webkit-scrollbar{
-
-    width:8px;
-
-}
-
-.paper::-webkit-scrollbar-thumb{
-
-    background:#d6c4aa;
-
-    border-radius:20px;
-
-}
-
-/* Responsive */
-
-@media(max-width:600px){
-
-.paper{
-
-    padding:30px;
-
-}
-
-.paper-header{
+#firma{
 
     font-size:34px;
 
-}
+    color:#d14f73;
 
-.paper-body{
-
-    font-size:28px;
-
-    line-height:1.8;
+    opacity:0;
 
 }
 
-.signature h3{
+#fecha{
 
-    font-size:32px;
+    margin-top:6px;
 
-}
+    font-size:22px;
 
-.signature span{
+    color:#777;
 
-    font-size:20px;
-
-}
+    opacity:0;
 
 }
 
-/* Animación */
+/* Cursor */
 
-@keyframes paperAppear{
+.cursor{
 
-0%{
+    display:inline-block;
 
-opacity:0;
+    width:2px;
 
-transform:scale(.9) translateY(40px);
+    background:#444;
+
+    animation:blink .7s infinite;
+
+    margin-left:2px;
 
 }
 
-100%{
+@keyframes blink{
+
+0%,50%{
 
 opacity:1;
 
-transform:scale(1) translateY(0);
-
 }
 
-}
-
-.signature h3,
-.signature span{
+51%,100%{
 
 opacity:0;
+
+}
 
 }
 
@@ -476,70 +364,60 @@ opacity:0;
 
 <div class="container">
 
-<div class="envelope">
-
-<div class="icon">
-
-<i class="fa-solid fa-envelope"></i>
-
-</div>
+<div class="card">
 
 <h1>
 
-Una Carta Para Ti ❤️
+💌 Una Carta Para Ti
 
 </h1>
 
 <p class="subtitle">
 
-Hay cosas que no siempre se dicen en el momento adecuado.
-
-Por eso decidí escribirlas.
-
-Tómate un instante, abre esta carta y léela con calma.
+Hay sentimientos que prefiero escribir con calma.
+Toca la hoja y deja que las palabras aparezcan poco a poco.
 
 </p>
 
-<button id="openLetter">
+<div class="paper" id="paper">
 
-<i class="fa-solid fa-envelope-open"></i>
+    <!-- Pantalla inicial -->
+    <div id="welcomePaper">
 
-Abrir carta
+        <div class="paper-title">
 
-</button>
-
-<div class="footer">
-
-Escrita especialmente para ti.
-
-</div>
-
-</div>
-
-</div>
-<!-- CARTA -->
-
-<div class="letter" id="letter">
-
-    <div class="paper">
-
-        <div class="paper-header">
-
-            ❤️ Para ti ❤️
+            ❤️ Para Ti ❤️
 
         </div>
 
-        <div class="paper-body">
+        <div class="paper-start">
 
-            <p id="typing"></p>
+            <i class="fa-solid fa-feather-pointed"></i>
+
+            <br><br>
+
+            Toca esta hoja para comenzar a leer...
 
         </div>
+
+    </div>
+
+    <!-- Carta -->
+    <div id="letterContent" style="display:none;">
+
+        <div class="paper-title">
+
+            ❤️ Para Ti ❤️
+
+        </div>
+
+        <div class="letter-text" id="typing"></div>
 
         <div class="signature">
 
-            <h3 id="firma"></h3>
+            <div id="firma"></div>
 
-            <span id="fecha"></span>
+            <div id="fecha"></div>
 
         </div>
 
@@ -553,11 +431,11 @@ Escrita especialmente para ti.
 // ELEMENTOS
 //=============================
 
-const envelope = document.querySelector(".envelope");
+const paper = document.getElementById("paper");
 
-const openButton = document.getElementById("openLetter");
+const welcomePaper = document.getElementById("welcomePaper");
 
-const letter = document.getElementById("letter");
+const letterContent = document.getElementById("letterContent");
 
 const typing = document.getElementById("typing");
 
@@ -567,49 +445,48 @@ const fecha = document.getElementById("fecha");
 
 
 //=============================
-// TU CARTA
+// CARTA
 //=============================
 
-const texto = `
+const carta = `Querida ❤️,
 
-Querida ❤️,
+Aquí comenzará tu carta.
 
-Aquí puedes escribir todo lo que quieras.
+Podrás escribir tantos párrafos como quieras.
 
-No importa si es una carta larga o corta.
+Cada línea aparecerá poco a poco, haciendo que la lectura sea mucho más especial.
 
-Cada palabra aparecerá poco a poco, como si la estuvieras escribiendo en ese mismo instante.
+Gracias por formar parte de tantos recuerdos conmigo.
 
-Puedes dejar párrafos en blanco.
+Espero que este pequeño detalle consiga sacarte una sonrisa.
 
-Puedes contar recuerdos.
+Con cariño...`;
 
-Puedes agradecer.
+let posicion = 0;
 
-Puedes decir lo que sientes.
-
-Y hacer que este sea el rincón más especial de todo el proyecto.
-
-`;
-
-let indice = 0;
+let escribiendo = false;
 
 
 //=============================
-// EFECTO MÁQUINA DE ESCRIBIR
+// EFECTO ESCRITURA
 //=============================
 
-function escribir(){
+function escribirCarta(){
 
-    if(indice < texto.length){
+    if(posicion < carta.length){
 
-        typing.textContent += texto.charAt(indice);
+        typing.innerHTML = carta.substring(0,posicion+1) +
+        '<span class="cursor"></span>';
 
-        indice++;
+        posicion++;
 
-        setTimeout(escribir,25);
+        setTimeout(escribirCarta,30);
 
-    }else{
+    }
+
+    else{
+
+        typing.innerHTML = carta;
 
         mostrarFirma();
 
@@ -624,29 +501,21 @@ function escribir(){
 
 function mostrarFirma(){
 
-    firma.style.opacity="0";
+    firma.innerHTML="Byron ❤️";
 
-    fecha.style.opacity="0";
+    fecha.innerHTML="Julio 2026";
 
-    firma.textContent="Con todo mi cariño,\nByron ❤️";
+    firma.style.transition=".8s";
 
-    fecha.textContent="Julio 2026";
+    fecha.style.transition=".8s";
 
-    setTimeout(()=>{
-
-        firma.style.transition=".8s";
-
-        firma.style.opacity="1";
-
-    },400);
+    firma.style.opacity="1";
 
     setTimeout(()=>{
-
-        fecha.style.transition=".8s";
 
         fecha.style.opacity="1";
 
-    },1200);
+    },600);
 
 }
 
@@ -655,16 +524,21 @@ function mostrarFirma(){
 // ABRIR CARTA
 //=============================
 
-openButton.onclick=()=>{
+paper.addEventListener("click",()=>{
 
-    envelope.style.display="none";
+    if(escribiendo) return;
 
-    letter.style.display="flex";
+    escribiendo=true;
 
-    escribir();
+    welcomePaper.style.display="none";
 
-}
+    letterContent.style.display="block";
+
+    escribirCarta();
+
+});
 
 </script>
+
 </body>
 </html>
