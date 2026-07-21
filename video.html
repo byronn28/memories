@@ -428,3 +428,49 @@ Cada segundo de este vídeo guarda un recuerdo que siempre quiero conservar.
 </div>
 
 </div>
+
+<script>
+
+//==========================
+// ELEMENTOS
+//==========================
+
+const thumbnail = document.getElementById("playVideo");
+
+const videoContainer = document.getElementById("videoContainer");
+
+const video = document.getElementById("video");
+
+
+//==========================
+// REPRODUCIR
+//==========================
+
+thumbnail.addEventListener("click",()=>{
+
+    thumbnail.style.display="none";
+
+    videoContainer.style.display="block";
+
+    video.play();
+
+});
+
+
+//==========================
+// CUANDO TERMINA
+//==========================
+
+video.addEventListener("ended",()=>{
+
+    video.pause();
+
+    video.currentTime=0;
+
+    videoContainer.style.display="none";
+
+    thumbnail.style.display="block";
+
+});
+
+</script>
