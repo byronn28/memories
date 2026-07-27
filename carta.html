@@ -10,8 +10,7 @@ content="width=device-width, initial-scale=1.0">
 
 <title>Una Carta Para Ti ❤️</title>
 
-<link rel="icon"
-href="assets/icono.png">
+<link rel="icon" type="image/png" href="https://img.icons8.com/?size=100&id=EatoE3zyvPzJ&format=png&color=000000">
 
 <link rel="preconnect"
 href="https://fonts.googleapis.com">
@@ -373,10 +372,8 @@ opacity:0;
 </h1>
 
 <p class="subtitle">
-
-Hay sentimientos que prefiero escribir con calma.
-Toca la hoja y deja que las palabras aparezcan poco a poco.
-
+Hay cosas que prefiero escribirte con calma.
+Toca la hoja para empezar..
 </p>
 
 <div class="paper" id="paper">
@@ -386,7 +383,7 @@ Toca la hoja y deja que las palabras aparezcan poco a poco.
 
         <div class="paper-title">
 
-            ❤️ Para Ti ❤️
+            Pensada en ti ❤️
 
         </div>
 
@@ -407,7 +404,7 @@ Toca la hoja y deja que las palabras aparezcan poco a poco.
 
         <div class="paper-title">
 
-            ❤️ Para Ti ❤️
+            Para Ti ❤️
 
         </div>
 
@@ -448,19 +445,33 @@ const fecha = document.getElementById("fecha");
 // CARTA
 //=============================
 
-const carta = `Querida ❤️,
+const carta = `Querida Estefania,
 
-Aquí comenzará tu carta.
+no sabría por donde empezar esta carta,
+no sabría como decirte lo que has echo en mi.
+en poco tiempo que hemos compartido me has echo
+una persona muy feliz, y agradezco cada momento
+cada beso, cada sonrisa espontanea y cada lugar
+de paz que encontraba cuando estaba contigo.
 
-Podrás escribir tantos párrafos como quieras.
+se que a lo mejor no soy el mejor para expresar
+este tipo de cosas pero quiero que sepas
+que aquí tienes una persona que te quiere mucho,
+que anhela verte feliz, que las cosas te vayan bien, 
+que luches y persigas tus sueños.
+no dudes en contar conmigo para cuando necesites, aquí estaré
+para tus días malos, buenos, y de loquita.
 
-Cada línea aparecerá poco a poco, haciendo que la lectura sea mucho más especial.
+se que para los dos seria mucho mejor todo, si estuviésemos juntos
+pero el destino es caprichoso, y quiero que sepas que la distancia
+a lo mejor puede separar físicamente a dos personas,
+pero no puede borrar un sentimiento.
 
-Gracias por formar parte de tantos recuerdos conmigo.
+todo va a estar y salir bien ❤️
 
-Espero que este pequeño detalle consiga sacarte una sonrisa.
+muchas palabras poca accion. 
 
-Con cariño...`;
+Con cariño y amor..`;
 
 let posicion = 0;
 
@@ -480,7 +491,7 @@ function escribirCarta(){
 
         posicion++;
 
-        setTimeout(escribirCarta,30);
+        setTimeout(escribirCarta,20);
 
     }
 
@@ -501,7 +512,7 @@ function escribirCarta(){
 
 function mostrarFirma(){
 
-    firma.innerHTML="Byron ❤️";
+    firma.innerHTML="elMijin";
 
     fecha.innerHTML="Julio 2026";
 
